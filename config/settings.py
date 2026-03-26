@@ -17,11 +17,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Third-party
+
     'rest_framework',
     'django_filters',
     'django_crontab',
-    # Local
+
     'products',
     'scraper',
 ]
@@ -80,9 +80,9 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Django REST Framework
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
@@ -93,7 +93,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 20,
 }
 
-# Cron jobs — runs scraper every 12 hours
 CRONJOBS = [
     ('0 */12 * * *', 'django.core.management.call_command', ['scrape_products']),
 ]
