@@ -99,6 +99,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 20,
 }
 
-CRONJOBS = [
-    ('0 */12 * * *', 'django.core.management.call_command', ['scrape_products']),
-]
+# CRONJOBS = [
+#     ('0 */12 * * *', 'django.core.management.call_command', ['scrape_products']),
+# ]
