@@ -16,7 +16,7 @@ class Category(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=500)
     description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    price = models.DecimalField(max_digits=14, decimal_places=2, null=True, blank=True)
     currency = models.CharField(max_length=10, default='EUR')
     image_url = models.URLField(max_length=1000, blank=True)
     product_url = models.URLField(max_length=1000, unique=True)
